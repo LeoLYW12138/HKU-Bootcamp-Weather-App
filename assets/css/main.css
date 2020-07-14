@@ -1,6 +1,7 @@
 body {
   background-color: whitesmoke;
   font-family: Verdana, Geneva, sans-serif;
+  margin: 0 1rem;
 }
 #container {
   margin-right: auto;
@@ -8,19 +9,58 @@ body {
   max-width: 1200px;
 }
 
-/* #header {
-  display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
+/* #warning-container {
   
-  border: 1px solid lavener;
-  padding: 2rem 1rem;
-  
-  
-  border-radius: 1rem;;
 } */
+
+#warning-content {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  left: -0.01rem;
+  background-color: red;
+  border-radius: 0 1rem 1rem;
+  z-index: 10;
+  padding: 1rem;
+  width: 80vw;
+  max-width: 1000px;
+}
+
+#warning {
+  position: relative;
+  width: 9rem;
+  background-color: red;
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+  text-shadow: 0 1px black;
+}
+
+#warning:hover {
+  border-radius: 1rem 1rem 0 0;
+}
+
+#warning:hover #warning-content {
+  display: block;
+  transition: ease-in-out;
+  transition-duration: 500ms;
+}
+
+.warning-message {
+  padding: 1rem 0;
+}
+
+#dropdown-arrow {
+  position: absolute;
+}
+
+#header {
+  border-radius: 1rem;
+  margin: 1rem 0;
+  background: rgba(84, 161, 192, 0.555);
+  padding: 2em 1.5em;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.151);
+  position: relative;
+}
 
 #title {
   font-size: 2.5em;
@@ -28,23 +68,35 @@ body {
   margin: 0.5em 0;
 }
 
-#header {
-  border-radius: 1rem;
-  margin: 1rem;
-  background: rgba(84, 161, 192, 0.555);
-  padding: 2em 1.5em;
-  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.151);
-  position: relative;
+#icon {
+  margin: 0 0.1rem 0 2rem
 }
 
-#icon {
-  margin-right: 0.1rem;
+#winfo-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.winfo {
+  font-size: 1.2rem;
+  margin: 0.5rem;
 }
 
 #reload {
   position: absolute;
   top: 0.3rem;
   right: 0.3rem;
+  cursor: pointer;
+}
+
+#lastUpdateTime {
+  position: absolute;
+  right: 0.5rem;
+  bottom: -0.8rem;
+  font-weight: normal;
 }
 
 #district {
@@ -58,17 +110,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-}
-
-#lastUpdateTime {
-  position: absolute;
-  right: 0.5rem;
-  bottom: -0.8rem;
-}
-
-.winfo {
-  font-size: 1.2rem;
-  margin: 0.5rem;
 }
 
 .block {
@@ -86,11 +127,13 @@ p {
 }
 p:first-of-type {
   margin-top: 2rem;
+  font-weight: bold;
 }
 
 .btn {
   float: right;
   margin: 1px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:800px) {
@@ -100,7 +143,10 @@ p:first-of-type {
   }
   #icon {
     display: block;
-    margin-bottom: 0.25em;
-    margin-right: 0.1rem;
+    margin: 0 0.1rem 0.25rem 0.2rem;
+    
+  }
+  #warning-content {
+    width: 70vw;
   }
 }

@@ -1,8 +1,15 @@
 const WEATHERAPIURL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en";
+const WEATHERWARNINGURL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=en";
 
 // Get the weather data from Obervatory
 async function getObData () {
   return fetch(WEATHERAPIURL, { mode: 'cors' })
+    .then(response => response.json());
+}
+
+// Get weather warning summary from Obervatory
+async function getWarnSum () {
+  return fetch(WEATHERWARNINGURL, { mode: 'cors' })
     .then(response => response.json());
 }
 
@@ -32,4 +39,4 @@ function getdistrict (pos) {
 }
 
 // Export all the functions declared
-export { getObData, getloc, getdistrict };
+export { getObData, getWarnSum, getloc, getdistrict };
