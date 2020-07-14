@@ -18,7 +18,7 @@ body {
   position: absolute;
   top: 1.5rem;
   left: -0.01rem;
-  background-color: red;
+  background-color: rgb(235, 72, 72);
   border-radius: 0 1rem 1rem;
   z-index: 10;
   padding: 1rem;
@@ -29,7 +29,7 @@ body {
 #warning {
   position: relative;
   width: 9rem;
-  background-color: red;
+  background-color: rgb(235, 72, 72);
   padding: 0.2rem 1rem;
   border-radius: 1rem;
   text-shadow: 0 1px black;
