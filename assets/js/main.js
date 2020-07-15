@@ -48,7 +48,7 @@ async function main () {
 
   generateHeader(addr, Odata, warnSum);
 
-  var Selected = "Forecast";
+  var Selected = "Temperature";
   //get the HTML <div> block to show those locations' temperatures
   let view = document.getElementById("show");
 
