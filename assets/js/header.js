@@ -28,6 +28,7 @@ export default function (addr, Odata, warnSum) {
   warningContent.id = "warning-content";
   warning.append(warningContent);
 
+  // A dictionary for conversion between warning signal and image filename
   let signals = {
     "WHOT": "vhot",
     "WCOLD": "cold",
@@ -41,6 +42,7 @@ export default function (addr, Odata, warnSum) {
     "WTMW": "tsunami-warn",
     "WTS": "ts"
   };
+  // Only render when warning signal is in force
   if (warnSum) {
     for (let i in warnSum) {
       let signalIcon = document.createElement('img');
@@ -69,7 +71,7 @@ export default function (addr, Odata, warnSum) {
   //display the title
   let title = document.createElement('h1');
   title.id = 'title';
-  title.innerHTML = 'Weather in Hong Kong';
+  title.innerHTML = 'Weather in <wbr>Hong Kong';
   output.append(title);
 
   //display the weather icon

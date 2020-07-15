@@ -1,5 +1,6 @@
 const WEATHERAPIURL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en";
 const WEATHERWARNINGURL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=en";
+const WEATHERFORECASTURL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en";
 
 // Get the weather data from Obervatory
 async function getObData () {
@@ -13,6 +14,10 @@ async function getWarnSum () {
     .then(response => response.json());
 }
 
+async function getWFore () {
+  return fetch(WEATHERFORECASTURL, { mode: 'cors' })
+    .then(response => response.json());
+}
 
 // Get the geolocation - latitude and longitude
 function getloc () {
@@ -39,4 +44,4 @@ function getdistrict (pos) {
 }
 
 // Export all the functions declared
-export { getObData, getWarnSum, getloc, getdistrict };
+export { getObData, getWarnSum, getWFore, getloc, getdistrict };
