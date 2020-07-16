@@ -102,7 +102,7 @@ async function main () {
     let fDate = `<p class="fdate">${formatDate(day.forecastDate)}</p>`;
     let fWeek = `<p class="fweek">${day.week}</p>`;
     let fTemp = `<p class="ftemp">${day.forecastMintemp.value}°C | ${day.forecastMaxtemp.value}°C</p>`;
-    let fHumid = `<p class="fhumid">${day.forecastMaxrh.value} - ${day.forecastMinrh.value}%</p>`;
+    let fHumid = `<p class="fhumid">${day.forecastMinrh.value} - ${day.forecastMaxrh.value}%</p>`;
     let fIcon = `<img class="fIcon" src="http://www.hko.gov.hk/images/HKOWxIconOutline/pic${day.ForecastIcon}.png">`;
     forecast.innerHTML = fIcon + fDate + fWeek + fTemp + fHumid;
     fore.append(forecast);
